@@ -7,7 +7,7 @@ var path_1 = __importDefault(require("path"));
 module.exports = {
     client: "sqlite",
     connection: {
-        filename: path_1.default.resolve(__dirname, "src", "database", "database.sqlite"),
+        filename: path_1.default.resolve(__dirname, "dist", "src", "database", "database.sqlite"),
     },
     migrations: {
         directory: path_1.default.resolve(__dirname, "src", "database", "migrations"),
