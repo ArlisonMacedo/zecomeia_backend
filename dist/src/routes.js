@@ -1,0 +1,27 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = __importDefault(require("express"));
+var UserController_1 = __importDefault(require("./Controllers/UserController"));
+var EstablishmentsController_1 = __importDefault(require("./Controllers/EstablishmentsController"));
+var ProductsController_1 = __importDefault(require("./Controllers/ProductsController"));
+var RequestsController_1 = __importDefault(require("./Controllers/RequestsController"));
+var multer_1 = __importDefault(require("multer"));
+var multer_2 = __importDefault(require("./config/multer"));
+var upload = multer_1.default(multer_2.default);
+var routes = express_1.default.Router();
+var userController = new UserController_1.default();
+var establishmentsController = new EstablishmentsController_1.default();
+var productsController = new ProductsController_1.default();
+var requestsController = new RequestsController_1.default();
+routes.post("/users", userController.store);
+routes.get("/establishments", establishmentsController.index);
+routes.post("/establishments", establishmentsController.store);
+routes.get("/products", productsController.index);
+routes.get("/products/:id", productsController.show);
+routes.post("/products", upload.single("image"), productsController.store);
+routes.get("/requests", requestsController.index);
+routes.post("/requests", requestsController.store);
+exports.default = routes;
