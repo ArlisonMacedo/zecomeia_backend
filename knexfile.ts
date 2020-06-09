@@ -5,7 +5,7 @@ module.exports = {
   connection: {
     filename: path.resolve(
       __dirname,
-      "dist",
+      // "dist",
       "src",
       "database",
       "database.sqlite"
