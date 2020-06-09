@@ -83,6 +83,27 @@ var EstablishmentsController = /** @class */ (function () {
             });
         });
     };
+    EstablishmentsController.prototype.session = function (request, response) {
+        return __awaiter(this, void 0, void 0, function () {
+            var id, user;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        id = request.body.id;
+                        return [4 /*yield*/, connection_1.default("establishments")
+                                .where("id", id)
+                                .select("*")
+                                .first()];
+                    case 1:
+                        user = _a.sent();
+                        if (!user) {
+                            return [2 /*return*/, response.json({ meg: "User not Found this is ID" })];
+                        }
+                        return [2 /*return*/, response.json(user)];
+                }
+            });
+        });
+    };
     return EstablishmentsController;
 }());
 exports.default = EstablishmentsController;

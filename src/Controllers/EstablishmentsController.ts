@@ -27,6 +27,18 @@ class EstablishmentsController {
 
     return response.json(establishment);
   }
+
+  async session(request: Request, response: Response) {
+    const { id } = request.body;
+    const user = await knex("establishments")
+      .where("id", id)
+      .select("*")
+      .first();
+    if (!user) {
+      return response.json({ meg: "User not Found this is ID" });
+    }
+    return response.json(user);
+  }
 }
 
 export default EstablishmentsController;

@@ -19,6 +19,7 @@ routes.post("/users", userController.store);
 
 routes.get("/establishments", establishmentsController.index);
 routes.post("/establishments", establishmentsController.store);
+routes.post("/establishments/session", establishmentsController.session);
 
 routes.get("/products", productsController.index);
 routes.get("/products/:id", productsController.show);
