@@ -78,7 +78,7 @@ var RequestsController = /** @class */ (function () {
                     case 2:
                         seralizedReqUser = _a.sent();
                         seralizedReqProduct = seralizedReqUser.map(function (reqUser) {
-                            return __assign(__assign({}, reqUser), { image_url: "http://localhost:3333/uploads/" + reqUser.image });
+                            return __assign(__assign({}, reqUser), { image_url: "https://powerful-harbor-68671.herokuapp.com/uploads/" + reqUser.image });
                         });
                         return [2 /*return*/, response.json(seralizedReqProduct)];
                 }

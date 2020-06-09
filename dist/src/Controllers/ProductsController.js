@@ -63,7 +63,7 @@ var ProductsController = /** @class */ (function () {
                     case 1:
                         products = _a.sent();
                         seralizedProducts = products.map(function (product) {
-                            return __assign(__assign({}, product), { image_url: "http://localhost:3333/uploads/" + product.image });
+                            return __assign(__assign({}, product), { image_url: "https://powerful-harbor-68671.herokuapp.com/uploads/" + product.image });
                         });
                         return [2 /*return*/, response.json(seralizedProducts)];
                 }
@@ -112,7 +112,7 @@ var ProductsController = /** @class */ (function () {
                         return [4 /*yield*/, connection_1.default("products").where("id", id).first()];
                     case 1:
                         product = _a.sent();
-                        seralizedProduct = __assign(__assign({}, product), { image_url: "http://localhost:3333/uploads/" + product.image });
+                        seralizedProduct = __assign(__assign({}, product), { image_url: "https://powerful-harbor-68671.herokuapp.com/uploads/" + product.image });
                         // const showProduct = await knex("products").select("*")
                         return [2 /*return*/, response.json({ product: seralizedProduct })];
                 }
