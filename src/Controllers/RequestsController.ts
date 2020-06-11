@@ -43,7 +43,7 @@ class RequestsController {
     const seralizedReqProduct = seralizedReqUser.map((reqUser) => {
       return {
         ...reqUser,
-        image_url: `https://powerful-harbor-68671.herokuapp.com/uploads/${reqUser.image}`,
+        image_url: `http://3.20.240.35:3333/uploads/${reqUser.image}`,
       };
     });
 

@@ -9,7 +9,7 @@ class ProductsController {
     const seralizedProducts = products.map((product) => {
       return {
         ...product,
-        image_url: `https://powerful-harbor-68671.herokuapp.com/uploads/${product.image}`,
+        image_url: `http://3.20.240.35:3333/uploads/${product.image}`,
       };
     });
 
@@ -48,7 +48,7 @@ class ProductsController {
 
     const seralizedProduct = {
       ...product,
-      image_url: `https://powerful-harbor-68671.herokuapp.com/uploads/${product.image}`,
+      image_url: `http://3.20.240.35:3333/uploads/${product.image}`,
     };
 
     // const showProduct = await knex("products").select("*")
