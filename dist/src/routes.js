@@ -17,6 +17,8 @@ var establishmentsController = new EstablishmentsController_1.default();
 var productsController = new ProductsController_1.default();
 var requestsController = new RequestsController_1.default();
 routes.post("/users", userController.store);
+routes.post("/users/session", userController.session);
+routes.get("/users/profile", userController.profile);
 routes.get("/establishments", establishmentsController.index);
 routes.post("/establishments", establishmentsController.store);
 routes.post("/establishments/session", establishmentsController.session);

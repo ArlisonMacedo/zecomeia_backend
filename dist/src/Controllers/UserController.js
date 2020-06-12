@@ -65,6 +65,42 @@ var UserController = /** @class */ (function () {
             });
         });
     };
+    UserController.prototype.session = function (request, response) {
+        return __awaiter(this, void 0, void 0, function () {
+            var id, user;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        id = request.body.id;
+                        return [4 /*yield*/, connection_1.default("users").where("id", id).select("*").first()];
+                    case 1:
+                        user = _a.sent();
+                        if (!user) {
+                            return [2 /*return*/, response.json({ erro: "User not Found" })];
+                        }
+                        return [2 /*return*/, response.json(user)];
+                }
+            });
+        });
+    };
+    UserController.prototype.profile = function (request, response) {
+        return __awaiter(this, void 0, void 0, function () {
+            var id, user;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        id = request.headers.authorization;
+                        return [4 /*yield*/, connection_1.default("users")
+                                .where("id", String(id))
+                                .select("*")
+                                .first()];
+                    case 1:
+                        user = _a.sent();
+                        return [2 /*return*/, response.json(user)];
+                }
+            });
+        });
+    };
     return UserController;
 }());
 exports.default = UserController;
