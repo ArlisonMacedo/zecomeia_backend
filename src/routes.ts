@@ -16,6 +16,8 @@ const productsController = new ProductsController();
 const requestsController = new RequestsController();
 
 routes.post("/users", userController.store);
+routes.post("/users/session", userController.session);
+routes.get("/users/profile", userController.profile);
 
 routes.get("/establishments", establishmentsController.index);
 routes.post("/establishments", establishmentsController.store);
